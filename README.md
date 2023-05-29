@@ -4,14 +4,19 @@ This is an nx plugin that add some kind of global \*.d.ts files.
 
 ## Usage
 
+
+Create a top level folder called types.
+Put some *.d.ts files there.
+
 ```
 npm i @hanspoo/global-types
 nx g @hanspoo/global-types:add-lib
 ```
 
-## How
+Run this generator and the types defined in the files will be available for all the projects and libs.
 
-It augments every "tsconfig*.json" file under "apps" or "libs" folder, with an includes entry: ../../types/*.d.ts or as many dots as needed to go up, the d.ts files you put there will then work for all the apps and libs.
+## How
+It augments every "tsconfig*.json" file under "apps" or "libs" with an includes entry: ../../types/*.d.ts (any dots as needed). 
 
 ## Caveats:
 
