@@ -1,11 +1,13 @@
-# global-types
+# global-types for nx
 
-This library was generated with [Nx](https://nx.dev).
+This is an nx plugin that add some kind of global \*.d.ts files.
 
-## Building
+## How
 
-Run `nx build global-types` to build the library.
+It augments every "tsconfig*.json" file under "apps" or "libs" folder, with an includes entry: ../../types/*.d.ts or as any dots as needed, the types of .d.ts files you put there will then work for all the apps and libs.
 
-## Running unit tests
+## Caveats:
 
-Run `nx test global-types` to execute the unit tests via [Jest](https://jestjs.io).
+- It doesn't create the types folder, nor the files that should be within it.
+- Actually it's focused on integrated monorepos.
+- Work only on \*nix operating systems like Linux and MacOS.
