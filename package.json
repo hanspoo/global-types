@@ -1,6 +1,6 @@
 {
   "name": "@hanspoo/global-types",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "private": false,
   "scripts": {},
@@ -35,5 +35,5 @@
     "@nx/plugin": "16.2.2"
   },
   "type": "commonjs",
-  "generators": "./generators.json"
+  "generators": "./dist/global-types/generators.json"
 }
