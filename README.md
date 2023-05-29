@@ -4,7 +4,6 @@ This is an nx plugin that add some kind of global \*.d.ts files.
 
 ## Usage
 
-
 Create a top level folder called types.
 Put some *.d.ts files there.
 
