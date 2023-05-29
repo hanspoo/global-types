@@ -11,3 +11,4 @@ It augments every "tsconfig*.json" file under "apps" or "libs" folder, with an i
 - It doesn't create the types folder, nor the files that should be within it.
 - Actually it's focused on integrated monorepos.
 - Work only on \*nix operating systems like Linux and MacOS.
+# global-types
