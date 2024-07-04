@@ -1,27 +1,31 @@
 # global-types for nx
 
-This is an nx plugin that add some kind of global \*.d.ts files.
+This is an nx plugin that add some kind global .d.ts definitions.
+
+## How it works
+
+It augments every "tsconfig*.json" file under "apps" or "libs" with an includes entry: ../../types/*.d.ts (any dots as needed).
+Then every definition file .d.ts in that folder will be available for all apps and libs.
 
 ## Usage
 
-Create a top level folder called types.
-Put some *.d.ts files there.
+Install the plugin:
 
 ```
-npm i @hanspoo/global-types
+npm i -D @hanspoo/global-types
+```
+
+And run the generator add-lib:
+
+```
 nx g @hanspoo/global-types:add-lib
 ```
-
-Run this generator and the types defined in the files will be available for all the projects and libs.
-
-## How
-It augments every "tsconfig*.json" file under "apps" or "libs" with an includes entry: ../../types/*.d.ts (any dots as needed). 
 
 ## Example
 
 A common use case is to add environment variables to process.env.
 
-When this generator has run, all the definition files under the top level folder *types* will be global.
+When this generator has run, all the definition files under the top level folder _types_ will be global.
 In this specific example we'll create some typed environment variables, augmenting the ProcessEnv interface in Node.
 
 ```
@@ -50,7 +54,7 @@ export {};
 Then in your code, it will be type safe to use them with dot notation:
 
 ```
-process.env.NODE 
+process.env.NODE
 ```
 
 Without this, you should use untyped bracket notation to access the variable:
@@ -66,3 +70,12 @@ Loosing type safety and intellisense in your editor.
 - It doesn't create the types folder, nor the files that should be within it.
 - Actually it's focused on integrated monorepos.
 - Work only on \*nix operating systems like Linux and MacOS.
+
+## Publishing
+
+Increment manually the version number in package.json.
+Execute the next command using the same version number you've put in package.json.
+
+```
+./node_modules/.bin/nx publish global-types  --ver=0.1.6 --tag=latest
+```

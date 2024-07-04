@@ -12,7 +12,7 @@ Then every definition file .d.ts in that folder will be available for all apps a
 Install the plugin:
 
 ```
-npm i @hanspoo/global-types
+npm i -D @hanspoo/global-types
 ```
 
 And run the generator add-lib:
@@ -77,5 +77,5 @@ Increment manually the version number in package.json.
 Execute the next command using the same version number you've put in package.json.
 
 ```
-./node_modules/.bin/nx publish global-types  --ver=0.1.4 --tag=latest
+./node_modules/.bin/nx publish global-types  --ver=0.1.6 --tag=latest
 ```
